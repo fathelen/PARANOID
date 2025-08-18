@@ -13,7 +13,7 @@ Reads
 1. **Sequence identifier** and optional description. Starts with a ``@``
 2. Actual **nucleotide sequence** of the read
 3. **Delimiter line**. Starts with a ``+``
-4. **Quality values** of nucleotide sequence (line2). Must contain same number of symbols as line 2
+4. **Quality values** of nucleotide sequence (line2). Must contain the same number of symbols as line 2
 
 Example:
 
@@ -30,13 +30,13 @@ Barcodes
 --------
 
 | ``TSV`` file containing experiment names and the corresponding barcode sequences. Reads from the input ``FASTQ`` file are split according to the detected barcode sequence and assigned to the appropriate experiment. This results in one ``FASTQ`` file per experiment. 
-| When choosing the option to merge replicates :ref:`-\-merge_replicates <merge-replicates>` the experiment names have to be chosen appropriately indicating which experiments belong together. In order to do that the appendix ``_rep_<number>`` has to be added to the experiment names, exchanging ``<number>`` with the replicate number. 
+| When choosing the option to merge replicates (:ref:`-\-merge_replicates <merge-replicates>`) the experiment names must be chosen appropriately to indicate which experiments belong together. In order to do that the suffix ``_rep_<number>`` must be added to the experiment names, replacing``<number>`` with the replicate number. 
 | Barcode files consist of 2 columns separated by a single ``tab``: 
 
 1. experiment name 
 2. barcode sequence present in reads 
 
-| Experiment names should only consist of Letters ``{a-zA-Z}``, numbers ``{1-9}`` and underscores ``_``. Any whitespaces (e.g. space, tab) will result in errors and thus the termination of the pipeline execution. The length of the barcode sequence is dependant on the protocol used an can be adapted via :ref:`-\-barcode_pattern <barcode-pattern>`.
+| Experiment names should only consist of Letters ``{a-zA-Z}``, numbers ``{1-9}`` and underscores ``_``. Any whitespaces (e.g. space, tab) will result in errors and thus the termination of the pipeline execution. The length of the barcode sequence is dependent on the protocol used and can be adapted via :ref:`-\-barcode_pattern <barcode-pattern>`.
 
 Example:
 
